@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Tiều đề trang</title>
+        <script>
+            function sum(){
+                qty1=parseFloat(myform.qty1.value)
+                qty2=parseFloat(myform.qty2.value)
+                qty3=parseFloat(myform.qty3.value)
+                price1=parseFloat(document.getElementById("price1").innerText)
+                price2=parseFloat(document.getElementById("price2").innerText)
+                price3=parseFloat(document.getElementById("price3").innerText)
+                total=qty1*price1+qty2*price2+qty3*price3
+                mydiv.innerHTML="Total = " + total
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="1" width="700" cellspacing="0" >
+                <tr>
+                    <td> Part Number</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                    <td>Qty</td>
+                    <td>Item table</td>
+                </tr>
+                <tr>
+                    <td>C112</td>
+                    <td>Mouse</td>
+                    <td><span id="price1">19.95</span>$</td>
+                    <td><input type="text" name="qty1"></td>
+                    <td><input type="text" name="item"></td>
+                </tr>
+                <tr>
+                    <td>B124</td>
+                    <td>Keyboard US</td>
+                    <td><span id="price2">29.95</span>$</td>
+                    <td><input type="text" name="qty2"></td>
+                    <td><input type="text" name="item"></td>
+                </tr>
+                <tr>
+                    <td>U125</td>
+                    <td>USB KingMax</td>
+                    <td><span id="price3">39.95</span>$</td>
+                    <td><input type="text" name="qty3"></td>
+                    <td><input type="text" name="item"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    <td align="right"> Total: <div id="mydiv"></div>
+                <button type="button" onclick="sum()">Sum</button></td>
+                </tr>
+             
+            </table>
+        </form>
+    </body>
+</html>
