@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Tiều đề trang</title>
+        <script>
+            function findsolution(){
+                a=parseFloat(myform.a.value)
+                b=parseFloat(myform.b.value)
+                c=parseFloat(myform.c.value)
+                delta=b*b-4*a*c
+                if(delta<0){
+                    mydiv.innerHTML="No solution"
+                }else if(delta==0){
+                    x=-b/(2*a)
+                    mydiv.innerHTML="Double solution: x = " + x
+                }else{
+                    x1=(-b+Math.sqrt(delta))/(2*a)
+                    x2=(-b-Math.sqrt(delta))/(2*a)
+                  mydiv.innerHTML="Two solutions: x1 = " + x1 + ", x2 = " + x2
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+         <table border="1">
+            <tr>
+    <th colspan="2" style="background-color: lightgreen;">
+        The quadratic equation
+    </th>
+</tr>
+            <tr>
+                <td>a</td>
+                <td><input type="text" name="a"></td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td><input type="text" name="b"></td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td><input type="text" name="c"></td>
+            </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td><div id="mydiv"></div></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" onclick="findsolution()">Find solution</button>
+                        <button type="reset" onclick="mydiv.innerHTML=''">Reset</button>
+                    </td>
+                </tr>
+        </table>
+        </form>
+    </body>
+</html>
